@@ -12,22 +12,17 @@ public class Customer {
     private String password;
     List<Product> cart;
 
-    public Customer() {
+    public Customer(String customerId , String name, String phoneNumber ,String email, String address , String password ) {
         this.customerId = customerId;
         this.name=name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.password=password;
-        cart = new ArrayList<>();
     }
-    public Customer(String customerId , String name, String phonenumber ,String email, String address , String password ) {
-        this.customerId = customerId;
-        this.name=name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.password=password;
+
+    public Customer() {
+
     }
 
     // Getters and Setters for the properties

@@ -5,14 +5,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 
-import javax.swing.JOptionPane;
 
-import java.util.logging.Level;
+
 import java.util.logging.Logger;
 
 public class Manage {
-    private ArrayList<Customer> customers;
-    private ArrayList<Product> products;
+    protected ArrayList<Customer> customers;
+    protected ArrayList<Product> products;
     private ArrayList<Installer> installers;
     private ArrayList<Order> orders;
     private ArrayList<Installation> installation;
@@ -41,7 +40,7 @@ public class Manage {
         for (Customer customer : customers) {
             if (customer.getEmail().equals(email) && customer.getPassword().equals(password)) {
                 
-               home_frame fh = new home_frame();
+               HomeFrame fh = new HomeFrame();
             }
         }
         logger.log(Level.INFO, "Emai or Password incorrect !");
@@ -161,19 +160,19 @@ public class Manage {
         orders.add(order);
     }
 
-    public ArrayList<Customer> getCustomers() {
+    public List<Customer> getCustomers() {
         return customers;
     }
 
-    public ArrayList<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public ArrayList<Installer> getInstallers() {
+    public List<Installer> getInstallers() {
         return installers;
     }
 
-    public ArrayList<Order> getOrders() {
+    public List<Order> getOrders() {
         return orders;
     }
 
@@ -227,60 +226,43 @@ public class Manage {
 		
 	}
 
-	public void checkinstallationrequest() {
-		   System.out.println("Contents of the 'installations' ArrayList:");
-	        for (Installation installation : installation) {
-	        	
-	            System.out.println(installation);
-	        }
+	public void checkInstallationRequest() {
+        logger.info("Contents of the 'installations' ArrayList:");
+        for (Installation installations : installation)
+            logger.info(installations.toString());
+
 	}
 
-	 public void schedule(String customerName, String productname, Date scheduledDate) {
-	        // Assuming you have an Appointment class
-	        Appointment appointment = new Appointment(customerName, productname, scheduledDate, "Scheduled");
+    public void schedule(String customerName, String productName, Date scheduledDate) {
+        // Assuming you have an Appointment class
+        Appointment appointment = new Appointment(customerName, productName, scheduledDate, "Scheduled");
 
-	        logger.log(Level.INFO,"Customer: " + appointment.getCustomerName() );
-	        logger.log(Level.INFO,"Product: " + appointment.getProduct());
-	        logger.log(Level.INFO,"Scheduled Date: " + appointment.getScheduledDate());
-	        logger.log(Level.INFO,"Status: " + appointment.getStatus());
-	        
-	  
+        logger.log(Level.INFO, () -> "Customer: " + appointment.getCustomerName());
+        logger.log(Level.INFO, () -> "Product: " + appointment.getProduct());
+        logger.log(Level.INFO, () -> "Scheduled Date: " + appointment.getScheduledDate());
+        logger.log(Level.INFO, () -> "Status: " + appointment.getStatus());
 
-	        // Add the appointment to the list of scheduled appointments
-	        scheduledAppointments.add(appointment);
-	    }
-
-	public void checkscheduledappointment() {
-		 System.out.println("Scheduled Appointments :");
-	        for (Appointment appointment : scheduledAppointments) {
-	            System.out.println(appointment);
-	        }
-		
-	}
-
-	public void viewproducts() {
-		 System.out.println("Available Products :");
-		  for (Product product : products) {
-	            System.out.println(product);
-	        }
-		
-	}
+        // Add the appointment to the list of scheduled appointments
+        scheduledAppointments.add(appointment);
+    }
 
 
+    public void checkScheduledAppointment() {
+        logger.info("Scheduled Appointments :");
+        for (Appointment appointment : scheduledAppointments) {
+            logger.info(appointment.toString());
+        }
+    }
 
 
-	
-	
-	
-	
-	
-	
-	
-	
+    public void viewProducts() {
+        logger.info("Available Products:");
+        for (Product product : products) {
+            logger.info(product.toString());
+        }
+    }
+
+
+    public void checkscheduledappointment() {
+    }
 }
-
-
-
-
-
-

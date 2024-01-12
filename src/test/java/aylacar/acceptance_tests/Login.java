@@ -2,32 +2,28 @@ package aylacar.acceptance_tests;
 
 import static org.junit.Assert.assertTrue;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 import aylacar.Manage;
-import aylacar.home_frame;
-import aylacar.login_frame;
+import aylacar.HomeFrame;
+import aylacar.LogInFrame;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Login {
 	
-	login_frame l ;
+	LogInFrame l ;
 	String email=null;
 	String password=null;
 	JButton button;
 	Manage m= new Manage();
-	home_frame h;
+	HomeFrame h;
 	
 	
 	@Given("the user is on the login page")
 	public void theUserIsOnTheLoginPage() {
-	 l=new login_frame();
+	 l=new LogInFrame();
 	}
 
 	@When("the user enters valid credentials")

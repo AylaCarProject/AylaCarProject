@@ -8,10 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class login_frame extends JFrame {
+public class LogInFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -26,11 +28,11 @@ public class login_frame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					login_frame frame = new login_frame();
+					LogInFrame frame = new LogInFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
-				}
+                    Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An unexpected error occurred", e);
+                }
 			}
 		});
 	}
@@ -38,8 +40,8 @@ public class login_frame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public login_frame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public LogInFrame() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(100, 100, 554, 504);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -82,7 +84,7 @@ public class login_frame extends JFrame {
         textField_1.setBounds(219, 178, 281, 19);
         panel.add(textField_1);
         
-        JButton login_btn = new JButton("Log In");
+
         login_btn.setFont(new Font("Tahoma", Font.BOLD, 14));
         login_btn.setForeground(new Color(64, 0, 64));
         login_btn.setBounds(206, 292, 114, 33);

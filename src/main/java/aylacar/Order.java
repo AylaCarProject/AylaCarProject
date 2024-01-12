@@ -2,11 +2,12 @@ package aylacar;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     private int orderId;
     private Customer customer;
-    private ArrayList<Product> products;
+    private List<Product> products;
     private Installer installer;
     private Date orderDate;
     private double totalAmount;
@@ -28,7 +29,7 @@ public class Order {
         return customer;
     }
 
-    public ArrayList<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 

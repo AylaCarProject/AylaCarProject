@@ -6,9 +6,9 @@ import javax.swing.JButton;
 
 import aylacar.Customer;
 import aylacar.Manage;
-import aylacar.home_frame;
-import aylacar.installation_frame;
-import aylacar.order_history_frame;
+import aylacar.HomeFrame;
+import aylacar.InstallationFrame;
+import aylacar.OrderHistoryFrame;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -16,7 +16,7 @@ import io.cucumber.java.en.Then;
 public class UserProfile {
 
 	
-	home_frame h;
+	HomeFrame h;
 	String name=null;
 	String password=null;
 	String email=null;
@@ -25,7 +25,7 @@ public class UserProfile {
 	
     @Given("the customer is logged in")
     public void theCustomerIsLoggedIn() {
-    h=new home_frame();
+    h=new HomeFrame();
     }
 
     @When("the customer navigates to the profile editing page")
@@ -52,7 +52,7 @@ public class UserProfile {
 
     @When("the customer navigates to the order history page")
     public void theCustomerNavigatesToTheOrderHistoryPage() {
-    	order_history_frame f=new order_history_frame();
+    	OrderHistoryFrame f=new OrderHistoryFrame();
     }
 
     @Then("the customer should see a list of past orders")
@@ -67,7 +67,7 @@ public class UserProfile {
 
     @When("the customer navigates to the installation requests page")
     public void theCustomerNavigatesToTheInstallationRequestsPage() {
-        installation_frame i = new installation_frame();
+        InstallationFrame i = new InstallationFrame();
     }
 
     @Then("the customer should see a list of past installation requests")

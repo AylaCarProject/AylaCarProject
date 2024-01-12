@@ -6,15 +6,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class home_frame extends JFrame {
+public class HomeFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -28,11 +29,11 @@ public class home_frame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					home_frame frame = new home_frame();
+					HomeFrame frame = new HomeFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
-				}
+                    Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An unexpected error occurred", e);
+                }
 			}
 		});
 	}
@@ -40,8 +41,8 @@ public class home_frame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public home_frame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public HomeFrame() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(100, 100, 554, 504);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -68,12 +69,12 @@ public class home_frame extends JFrame {
         panel.add(btnNewButton);
         
         JButton btnNewButton_1 = new JButton("Interior");
-        btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 9));
+
         btnNewButton_1.setBounds(62, 209, 85, 31);
         panel.add(btnNewButton_1);
         
         JLabel lblNewLabel = new JLabel("Categories :");
-        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+
         lblNewLabel.setForeground(new Color(255, 255, 255));
         lblNewLabel.setBounds(62, 175, 91, 13);
         panel.add(lblNewLabel);
@@ -83,22 +84,19 @@ public class home_frame extends JFrame {
         panel.add(btnNewButton_5);
         
         JLabel lblNewLabel_1 = new JLabel("Ayla Car");
-        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 33));
+
         lblNewLabel_1.setForeground(new Color(255, 255, 255));
         lblNewLabel_1.setBounds(182, 33, 242, 60);
         panel.add(lblNewLabel_1);
         
         JButton btnNewButton_1_1 = new JButton("Exterior");
-        btnNewButton_1_1.setFont(new Font("Tahoma", Font.BOLD, 9));
-        btnNewButton_1_1.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        	}
-        });
+
+     ;
         btnNewButton_1_1.setBounds(62, 253, 85, 31);
         panel.add(btnNewButton_1_1);
         
         JButton btnNewButton_1_2 = new JButton("Electronics");
-        btnNewButton_1_2.setFont(new Font("Tahoma", Font.BOLD, 9));
+
         btnNewButton_1_2.setBounds(62, 296, 85, 31);
         panel.add(btnNewButton_1_2);
         

@@ -10,8 +10,8 @@ public class Installer {
     private String email;
     private String phoneNumber;
     private String specialization;
-    ArrayList<Appointment> appointments = new ArrayList<>();
-    public List<Product> findByNameProduct = new ArrayList<>();
+    private final ArrayList<Appointment> appointments = new ArrayList<>();
+    public final List<Product> findByNameProduct = new ArrayList<>();
     protected List<Customer> findByNameCustomer = new ArrayList<>();
     
 
@@ -24,13 +24,12 @@ public class Installer {
         this.specialization = specialization;
     }
 
+    public Installer() {
+
+    }
+
     // Getters and Setters for the properties
 
-  
-
-	public Installer() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public int getInstallerId() {
         return installerId;

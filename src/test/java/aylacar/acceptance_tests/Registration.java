@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import aylacar.Customer;
 import aylacar.Manage;
-import aylacar.signup_frame;
+import aylacar.SignUpFrame;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,13 +19,13 @@ String email =null;
 String password =null;
 String address =null;
 String phoneNumber =null;
-signup_frame s;
+SignUpFrame s;
 Manage m=new Manage();
 
 @Given("the customer is on the registration page")
 
 public void theCustomerIsOnTheRegistrationPage() {
-     s= new signup_frame();
+     s= new SignUpFrame();
    
 }
 
@@ -98,7 +98,7 @@ public void theRegistrationShouldFailAndAnErrorMessageShouldBeDisplayed() {
 
 @Given("there is an existing customer with the email {string}")
 public void thereIsAnExistingCustomerWithTheEmail(String string) {
-  s=new signup_frame();
+  s=new SignUpFrame();
 }
 
 @When("the customer provides registration details with the same email")

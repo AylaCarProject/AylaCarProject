@@ -27,7 +27,7 @@ public class InstallerRole {
 
     @When("the installer checks the list of installation requests")
     public void whenInstallerChecksInstallationRequests() {
-      m.checkinstallationrequest();
+      m.checkInstallationRequest();
     }
 
     @Then("the installer should see a list of installation requests")

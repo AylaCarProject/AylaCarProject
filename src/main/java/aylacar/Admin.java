@@ -70,6 +70,7 @@ public class Admin {
             }
 
         }
+
         findByNameProduct.set(neededIndex-1,toUpdate);
         return false;
     }

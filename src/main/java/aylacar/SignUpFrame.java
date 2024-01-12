@@ -8,10 +8,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class signup_frame extends JFrame {
+public class SignUpFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -32,11 +34,11 @@ public class signup_frame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					signup_frame frame = new signup_frame();
+					SignUpFrame frame = new SignUpFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
-				}
+                    Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An unexpected error occurred", e);
+                }
 			}
 		});
 	}
@@ -45,8 +47,8 @@ public class signup_frame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public signup_frame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public SignUpFrame() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(100, 100, 554, 504);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

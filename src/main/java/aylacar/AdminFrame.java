@@ -8,8 +8,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class admin_frame extends JFrame {
+public class AdminFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -21,10 +23,11 @@ public class admin_frame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					admin_frame frame = new admin_frame();
+					AdminFrame frame = new AdminFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An unexpected error occurred", e);
+
 				}
 			}
 		});
@@ -33,8 +36,8 @@ public class admin_frame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public admin_frame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public AdminFrame() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(100, 100, 554, 504);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -55,12 +58,12 @@ public class admin_frame extends JFrame {
         panel.add(btnNewButton);
         
         JButton btnManageCategories = new JButton("Manage Categories");
-        btnManageCategories.setFont(new Font("Tahoma", Font.BOLD, 16));
+
         btnManageCategories.setBounds(160, 179, 209, 53);
         panel.add(btnManageCategories);
         
         JButton btnManageUsers = new JButton("Manage Users");
-        btnManageUsers.setFont(new Font("Tahoma", Font.BOLD, 16));
+
         btnManageUsers.setBounds(160, 258, 209, 53);
         panel.add(btnManageUsers);
 	}

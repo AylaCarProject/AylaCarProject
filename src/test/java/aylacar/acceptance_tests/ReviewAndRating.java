@@ -10,15 +10,15 @@ import javax.swing.JButton;
 import aylacar.Installation;
 import aylacar.Manage;
 import aylacar.Product;
-import aylacar.installation_frame;
-import aylacar.p1;
+import aylacar.InstallationFrame;
+import aylacar.P1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 
 public class ReviewAndRating {
 
-    p1 p;
+    P1 p;
     JButton button = new JButton();
     String star=null;
     String comment=null;
@@ -34,7 +34,7 @@ public class ReviewAndRating {
 	
     @Given("the customer is on the product details page")
     public void theCustomerIsOnTheProductDetailsPage() {
-    	p= new p1();
+    	p= new P1();
     }
 
     @When("the customer clicks on the {string} button")
@@ -95,7 +95,7 @@ public class ReviewAndRating {
     
     @Given("the customer is on the product details page")
     public void theCustomerIsOnTheProductDetailsPageForViewingAverageRatingsAndReviews() {
-    	p=new p1();
+    	p=new P1();
         }
 
     @Then("the customer should see the average rating for the product")
@@ -111,7 +111,7 @@ public class ReviewAndRating {
    
     @Given("the customer is on the installation service details page")
     public void theCustomerIsOnTheInstallationServiceDetailsPageForViewingAverageRatingsAndReviews() {
-       installation_frame f=new installation_frame();
+       InstallationFrame f=new InstallationFrame();
     }
 
     @Then("the customer should see the average rating for the installation service")

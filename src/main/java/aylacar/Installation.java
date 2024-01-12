@@ -9,6 +9,9 @@ public class Installation {
     private Date date;
     private String status;
 
+    public Installation(){
+
+    }
     public Installation(int installationId, String customerName, String installerName, Date date, String status) {
         this.installationId = installationId;
         this.customerName = customerName;
@@ -17,11 +20,8 @@ public class Installation {
         this.status = status;
     }
 
-    // Getters and setters for the fields
 
-    public Installation() {
-		// TODO Auto-generated constructor stub
-	}
+
 
 	public int getInstallationId() {
         return installationId;
@@ -63,12 +63,10 @@ public class Installation {
         this.status = status;
     }
 
-	public boolean checkComplete() {
-		
-		if( status=="complelte") {
-			return true;
-		}
-		else
-			return false;
-	}
+    public boolean checkComplete() {
+
+        return "complete".equals(status);
+    }
+
+
 }

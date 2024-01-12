@@ -1,12 +1,14 @@
 package aylacar;
 
 import java.awt.EventQueue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class p2 extends JFrame {
+public class ExteriorFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -18,10 +20,10 @@ public class p2 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					p2 frame = new p2();
+					ExteriorFrame frame = new ExteriorFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An unexpected error occurred", e);
 				}
 			}
 		});
@@ -30,8 +32,8 @@ public class p2 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public p2() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public ExteriorFrame() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

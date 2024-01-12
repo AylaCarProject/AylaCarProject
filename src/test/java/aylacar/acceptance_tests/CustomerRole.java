@@ -9,22 +9,18 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import aylacar.Manage;
-import aylacar.Product;
-import aylacar.cart_frame;
-import aylacar.home_frame;
-import aylacar.list_frame;
-import aylacar.p1;
+
+import aylacar.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CustomerRole {
 
-home_frame h;
+HomeFrame h;
 String product_s=null;
 Manage m=new Manage();
-cart_frame c;
+CartFrame c;
 String address_c=null;
 String name_c=null;
 String phone_c=null;
@@ -39,13 +35,13 @@ String category=null;
 
 @Given("the customer is on the product catalog page")
 public void theCustomerIsOnTheProductCatalogPage() {
-h=new home_frame();
+h=new HomeFrame();
 }
 
 @When("the customer views the list of available products")
 public void theCustomerViewsTheListOfAvailableProducts() {
    
-m.viewproducts();
+m.viewProducts();
 	
 }
 
@@ -81,7 +77,7 @@ public void theCustomerShouldSeeOnlyProductsBelongingToTheSelectedCategory() {
 
 @Given("the customer is on the product details page")
 public void theCustomerIsOnTheProductDetailsPage() {
-	p1 p = new p1();
+	P1 p = new P1();
 
 }
 
@@ -99,7 +95,7 @@ public void theProductShouldBeAddedToTheCustomerSShoppingCart() {
 
 @Given("the customer has added products to the shopping cart")
 public void theCustomerHasAddedProductsToTheShoppingCart() {
-c=new cart_frame();
+c=new CartFrame();
 }
 
 @When("the customer proceeds to checkout")
@@ -133,7 +129,7 @@ assertTrue(true);
 
 @Given("the customer is logged in")
 public void theCustomerIsLoggedIn() {
-h=new home_frame();
+h=new HomeFrame();
 }
 
 @When("the customer navigates to the order history page")
@@ -147,7 +143,7 @@ public void theCustomerNavigatesToTheOrderHistoryPage() {
 
 @Then("the customer should see a list of past orders")
 public void theCustomerShouldSeeAListOfPastOrders() {
-list_frame l =new list_frame();
+ListFrame l =new ListFrame();
 }
 
 @Then("be able to view details of each order, including products, quantities, and order status")
