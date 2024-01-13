@@ -1,0 +1,35 @@
+name: Code Quality and Coverage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+
+    - name: Build with Gradle
+      run: ./gradlew build
+
+    - name: Run Tests and Generate JaCoCo Report
+      run: ./gradlew test jacocoTestReport
+
+    - name: SonarCloud Scan
+      run: |
+        ./gradlew sonarqube \
+          -Dsonar.projectKey=AylaCarProject \
+          -Dsonar.organization=aylacarproject \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=5a5a7a2c8d8cd769e70d83370e8caa46a668c7f8
+
+  # Add additional jobs, steps, or post-processing as needed.
