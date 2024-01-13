@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
+        java-version: '11' # or the version you want to use
 
     - name: Build with Gradle
       run: ./gradlew build
@@ -31,5 +32,3 @@ jobs:
           -Dsonar.organization=aylacarproject \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=5a5a7a2c8d8cd769e70d83370e8caa46a668c7f8
-
-  # Add additional jobs, steps, or post-processing as needed.
